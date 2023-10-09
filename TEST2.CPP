@@ -36,15 +36,19 @@ double x,y,x0,y0,y01,x1,y1;
 	x=getmaxx()/2;
 	y=getmaxy()/2;
 	settextstyle(7,HORIZ_DIR,4);
-	outtextxy(0,0, "MEGA FUNCTION");
-	settextstyle(7,HORIZ_DIR,3);
-	outtextxy(x, y, "0");
-	outtextxy(x+(3.14*8)*10,y, "pi*8");
-	outtextxy(x+(3*3.14/2)*10,y, "3*pi/2");
+	outtextxy(0,0, "FUNCTION: sin^3x + cos^2x");
+	settextstyle(7,HORIZ_DIR,1);
+	outtextxy(5, y, "0");
+	outtextxy((3.14*8)*20,y, "pi*8");
+	outtextxy((3*3.14/2)*20,y, "3*pi/2");
 	line( 0, y, x*2, y);
-	line( x, 0, x, y*2);
-	line( x+(3*3.14/2)*10, 0, x+(3*3.14/2)*10, y*2);
-	line( x+(8*3.14*10), 0, x+(8*3.14*10), y*2);
+	line( 0, 0, 0, y*2);
+	line((3*3.14/2)*20, 0, (3*3.14/2)*20, y*2);
+	line((8*3.14*20), 0, (8*3.14*20), y*2);
+	setcolor(GREEN);
+	bar3d(0, 50, 100, 85, 0, 0);
+	outtextxy(5, 55, "max = 1");
+	setcolor(WHITE);
 	x0 = 3.14*3/2;
 
 	while( x0 < 3.14*8)
@@ -59,8 +63,8 @@ double x,y,x0,y0,y01,x1,y1;
 	y01 *= y01;
 	y0 += y01;
 
-	x1 = x + 10*x0;
-	y1 = y -10*y0;
+	x1 = 0 + 20*x0;
+	y1 = y -20*y0;
 	if (kbhit()) {
 		break;
 	}
